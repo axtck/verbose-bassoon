@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Header from './components/header/Header';
-import MainContent from './containers/Content/MainContent';
+import MainContent from './containers/content/MainContent';
 
 interface AppProps { };
 
