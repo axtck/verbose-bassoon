@@ -1,11 +1,11 @@
-version: "3.7"
+version: "3.9"
 
 services:
   sample:
-    container_name: sample
+    container_name: verbose-bassoon-rr
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile  # change to Dockerfile.prod when in prod
     volumes:
       - ".:/app"
       - "/app/node_modules"
