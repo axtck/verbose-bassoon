@@ -1,4 +1,5 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, MouseEvent } from 'react';
+import { useHistory } from 'react-router';
 import { DefinitionType } from '../../types';
 
 interface DefinitionProps {
@@ -7,9 +8,14 @@ interface DefinitionProps {
 };
 
 const Definitions: FunctionComponent<DefinitionProps> = ({ title, definitions }) => {
+    const history = useHistory();
+
+    const handleClick = (e: MouseEvent<HTMLLIElement>, did: number, dterm: string) => {
+        history.push(`/definition/${dterm}/${did}`);
+    }
 
     const mappedDefinitions = definitions.map((d, i) => {
-        return <li key={i} className="list-group-item">
+        return <li key={i} className="list-group-item" onClick={(e) => handleClick(e, d.id, d.term)}>
             <b>{d.id}:</b> {d.definition}
         </li>
     });

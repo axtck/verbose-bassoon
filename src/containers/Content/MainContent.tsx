@@ -1,25 +1,17 @@
 import React, { FunctionComponent } from 'react';
-import Bassoon from '../../components/bassoon/Bassoon';
-import Verbose from '../../components/verbose/Verbose';
-import garfieldbassoon from '../../images/garfieldbassoon.jpg';
+import { Route, Switch } from 'react-router';
+import DefinitionDetails from '../../components/definitions/DefinitionDetails';
+import HomePage from './HomePage';
 
 interface MainContentProps { };
 
 const MainContent: FunctionComponent<MainContentProps> = () => {
 
     return (
-        <div>
-            <h3 className="mb">Welcome!</h3>
-            <div className="row">
-                <div className="col mt-5">
-                    <Verbose />
-                    <Bassoon />
-                </div>
-                <div className="col text-center">
-                    <img src={garfieldbassoon} className="img-fluid" alt="garfieldbassoon" />
-                </div>
-            </div>
-        </div>
+        <Switch>
+            <Route path="/definition/:term/:definitionId" component={DefinitionDetails} />
+            <Route path="/home" component={HomePage} />
+        </Switch>
     );
 }
 
