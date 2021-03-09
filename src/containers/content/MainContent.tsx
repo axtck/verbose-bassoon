@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Route, Switch } from 'react-router';
+import { Redirect, Route, Switch } from 'react-router';
 import DefinitionDetails from '../../components/definitions/DefinitionDetails';
 import HomePage from './HomePage';
 
@@ -11,6 +11,7 @@ const MainContent: FunctionComponent<MainContentProps> = () => {
         <Switch>
             <Route path="/definition/:term/:definitionId" component={DefinitionDetails} />
             <Route path="/home" component={HomePage} />
+            <Redirect to="/home" />
         </Switch>
     );
 }
