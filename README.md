@@ -11,9 +11,9 @@
 
 ---
 
-# Building and deploying
+## Building and deploying
 
-## Development
+### Development
 
 ```bash
 # build
@@ -27,7 +27,7 @@ docker-compose -f docker-compose.dev.yml up # using compose
 
 ---
 
-## Production 
+### Production 
 
 Note that an nginx.conf file has to be present in the project if you use React Router (/nging/nginx.conf)
 
