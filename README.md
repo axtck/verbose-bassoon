@@ -6,13 +6,14 @@
 
 ## Goal
 
-* dockerize a React app
+* containerizing a React app with Docker
+* try out different approaches
 
 ---
 
-## Run
+# Building and deploying
 
-Development
+## Development
 
 ```bash
 # build
@@ -24,7 +25,11 @@ docker run -d -p 3001:3000 --name somename axtck/verbose-bassoon:tag # normal
 docker-compose -f docker-compose.dev.yml up # using compose
 ```
 
-Production 
+---
+
+## Production 
+
+Note that an nginx.conf file has to be present in the project if you use React Router (/nging/nginx.conf)
 
 ```bash 
 # build
